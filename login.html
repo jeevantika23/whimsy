@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dashboard-container {
+      width: 800px;
+      max-width: 90%;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fade-in 0.5s ease-out;
+    }
+    
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .welcome-section {
+      margin-bottom: 2rem;
+    }
+    
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background-color: rgba(14, 165, 233, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: rgb(14, 165, 233);
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: #666;
+      font-size: 0.875rem;
+    }
+    
+    .logout-button {
+      background-color: #f1f5f9;
+      color: #334155;
+    }
+    
+    .logout-button:hover {
+      background-color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>Dashboard</h1>
+      <button id="logoutButton" class="logout-button">Log Out</button>
+    </div>
+    
+    <div class="welcome-section">
+      <h2 id="welcomeMessage">Welcome back!</h2>
+      <p class="subtitle">Your behavioral profile is active and helping keep your account secure.</p>
+    </div>
+    
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-value" id="securityScore">98%</div>
+        <div class="stat-label">Security Score</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="loginCount">1</div>
+        <div class="stat-label">Successful Logins</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="lastLogin">Just Now</div>
+        <div class="stat-label">Last Login</div>
+      </div>
+    </div>
+    
+    <div>
+      <h3>Account Security</h3>
+      <p>Your behavioral biometrics pattern has been recorded. When someone attempts to log in with your credentials, their behavior will be compared to your pattern to help verify their identity.</p>
+      <p>If you need to update your behavior pattern, log out and log back in with "Training Mode: ON".</p>
+    </div>
+  </div>
+  
+  <div id="toast" class="toast"></div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
